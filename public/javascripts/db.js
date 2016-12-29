@@ -13,6 +13,7 @@ var app = firebase.initializeApp(config);
 
 var database = app.database();
 var ref = database.ref('inventory/cars');
+var msgRef = database.ref('text/motd');
 // console.log(database);
 
 var data = {
