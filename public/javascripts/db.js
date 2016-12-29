@@ -47,12 +47,7 @@ function writeMOTD() {
 }
 // writeDb();
 
-function wipeDB() {
-    var conf = confirm("Delete Database?");
-    if(conf){
-        ref.child().remove();
-    }
-}
+
 
 
 ref.on('value',gotData,errData);
