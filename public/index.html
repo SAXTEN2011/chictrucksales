@@ -36,11 +36,11 @@
     <header class="mdl-layout__header">
         <div class="mdl-layout__header-row">
             <!-- Title -->
-            <span class="mdl-layout-title">Chickasha Truck Sales - (405) 620-0760</span>
+            <span class="mdl-layout-title">Chickasha Truck Sales</span>
             <!-- Add spacer, to align navigation to the right -->
             <div class="mdl-layout-spacer"></div>
             <!-- Navigation. We hide it in small screens. -->
-            <nav class="mdl-navigation mdl-layout--large-screen-only">
+            <nav class="mdl-navigation">
                 <a class="mdl-navigation__link" href="./contact.html">Contact Us</a>
                 <!--<a class="mdl-navigation__link" href="">Link</a>-->
                 <!--<a class="mdl-navigation__link" href="">Link</a>-->
@@ -53,7 +53,7 @@
         <nav class="mdl-navigation">
             <a class="mdl-navigation__link" href="#">Website Created By Aaron Pierce</a>
             <a class="mdl-navigation__link" href="mailto:admin@chickashatrucksales">Contact at admin@chickashatrucksales</a>
-            <a class="mdl-navigation__link" href=""></a>
+            <a class="mdl-navigation__link" href="#">+1 (405) 620-0760</a>
             <a class="mdl-navigation__link" href="./admin.html">Admin Page</a>
         </nav>
     </div>
@@ -62,19 +62,6 @@
                 <h1 class="loading">Loading...</h1>
 
             </div>
-
-        <dialog class="mdl-dialog">
-            <h4 class="mdl-dialog__title">Allow data collection?</h4>
-            <div class="mdl-dialog__content">
-                <p>
-                    Allowing us to collect data will let us get you the information you want faster.
-                </p>
-            </div>
-            <div class="mdl-dialog__actions">
-                <button type="button" class="mdl-button">Agree</button>
-                <button type="button" class="mdl-button close">Disagree</button>
-            </div>
-        </dialog>
     </main>
 </div>
 </body>
@@ -94,11 +81,4 @@
         text-align: left;
     }
 </style>
-<script>
-    var dialog = $('dialog');
-    if (! dialog.showModal) {
-        dialogPolyfill.registerDialog(dialog);
-    }
-    dialog.showModal();
-</script>
 </html>
