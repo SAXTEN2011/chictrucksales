@@ -145,6 +145,19 @@
             <div class="deleteDiv" style="display: none">
 
             </div>
+
+            <form action="#">
+                <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
+                    <textarea class="mdl-textfield__input" type="text" rows= "3" id="message" ></textarea>
+                    <label class="mdl-textfield__label" for="message">Edit Message Of The Day</label>
+                </div>
+            </form>
+
+            <button class="mdl-button mdl-js-button mdl-button--raised motd">
+                Update MOTD
+            </button>
+
+
         </div>
     </main>
 </div>
@@ -176,7 +189,7 @@
         console.log(miles);
 
         if(make1 === "" || model1 === "" || color1 === "" || comments1===""){
-            alert("You cannot sumbit a car with a blank field");
+            alert("You cannot submit a car with a blank field");
 
         }else {
 
@@ -210,6 +223,13 @@
 
     $(".delete").click(function () {
         $(".deleteDiv").css("display", "block");
+    });
+    $(".motd").click(function () {
+        msgRef.remove();
+        motd.message = $("#message").val();
+        writeMOTD();
+        $("#message").val("");
+        alert("Posted new message of the day");
     });
 
 </script>

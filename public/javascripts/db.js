@@ -26,6 +26,11 @@ var data = {
     year: "2005",
     miles: "100,000"
 };
+
+var motd = {
+  message: "Home of reliable rides for low prices"
+};
+
 function writeDb() {
     ref.push(data);
     console.log("Name: " + data.name);
@@ -34,6 +39,11 @@ function writeDb() {
     console.log("Model: " + data.model);
     console.log("Comments: " + data.comments);
     // console.log("Color: " + data.color);
+}
+
+function writeMOTD() {
+    msgRef.push(motd);
+    console.log('Pushed motd ' + motd.message);
 }
 // writeDb();
 
