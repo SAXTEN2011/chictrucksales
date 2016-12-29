@@ -97,7 +97,18 @@
                     <label class="mdl-textfield__label" for="model">Model</label>
                 </div>
             </form>
-
+            <form action="#">
+                <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
+                    <input class="mdl-textfield__input" type="text" id="year">
+                    <label class="mdl-textfield__label" for="year">Year</label>
+                </div>
+            </form>
+            <form action="#">
+                <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
+                    <input class="mdl-textfield__input" type="text" id="miles">
+                    <label class="mdl-textfield__label" for="miles">Miles</label>
+                </div>
+            </form>
             <form action="#">
                 <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
                     <input class="mdl-textfield__input" type="text" id="color">
@@ -112,20 +123,35 @@
                 </div>
             </form>
 
+            <form action="#">
+                <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
+                    <input class="mdl-textfield__input" type="text" id="price">
+                    <label class="mdl-textfield__label" for="price">Price</label>
+                </div>
+            </form>
+
 
             <button class="mdl-button mdl-js-button mdl-button--raised button">
                 Add Car
             </button>
+            <br>
+            <br>
+            <br>
+            <br>
 
+            <button class="mdl-button mdl-js-button mdl-button--raised delete">
+                Delete A Car
+            </button>
+            <div class="deleteDiv" style="display: none">
 
-
+            </div>
         </div>
     </main>
 </div>
 
 </body>
 
-<script>
+<script class="mainJS">
     function capitalizeFirstLetter(string) {
         var lower = string.toLowerCase();
 //        console.log("lower " + lower);
@@ -134,6 +160,7 @@
 
     $(".button").click(function () {
         var make1 = $("#make").val();
+
         console.log(make1);
         var model1 = $("#model").val();
         console.log(model1);
@@ -141,33 +168,60 @@
         console.log(color1);
         var comments1 = $("#comments").val();
         console.log(comments1);
+        var price1 = $("#price").val();
+        console.log(price1);
+        var year1 = $("#year").val();
+        console.log(price1);
+        var miles1 = $("#miles").val();
+        console.log(miles);
+
+        if(make1 === "" || model1 === "" || color1 === "" || comments1===""){
+            alert("You cannot sumbit a car with a blank field");
+
+        }else {
+
 //        if($(".color").val().toLowerCase() === $(".color").val()){
 //        }else{
-        data.color = color1;
-        data.name = make1 + " " + model1;
-        data.make = make1;
-        data.model = model1;
-        data.comments = comments1;
-        console.log(data);
-        writeDb();
-        $("#make").val("").select();
-        $("#model").val("");
-        $("#color").val("");
-        $("#comments").val("");
-        $("main").append("<h6 style='color: green' class='successMsg'>Submitted!</h6>");
-        setTimeout(function () {
-        $(".successMsg").remove();
-        },1000);
-//        }
+            data.color = color1;
+            data.name = make1 + " " + model1;
+            data.make = make1;
+            data.model = model1;
+            data.comments = comments1;
+            data.price = price1;
+            data.year = year1;
+            data.miles = miles1;
 
+            console.log(data);
+            writeDb();
+            $("#make").val("").select();
+            $("#model").val("");
+            $("#color").val("");
+            $("#comments").val("");
+            $("#price").val("");
+            $("#year").val("");
+            $("#miles").val("");
+            $("main").append("<h6 style='color: green' class='successMsg'>Submitted!</h6>");
+            setTimeout(function () {
+                $(".successMsg").remove();
+            }, 1000);
+//        }
+        }
     });
+
+    $(".delete").click(function () {
+        $(".deleteDiv").css("display", "block");
+    });
+
 </script>
 <style>
     main{
         text-align: center;
         background-color: #fafafa;
     }
-
+    #delCar:hover{
+        color: red;
+        cursor: pointer;
+    }
 </style>
 
 </html>

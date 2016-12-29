@@ -20,7 +20,10 @@ var data = {
     color: "Black",
     make: "Idontknowwhatamakeis",
     model: "Idontknowwhatamodelis",
-    comments: "Runs and drives beautifully, needs a new headliner. Sold to my son."
+    comments: "Runs and drives beautifully, needs a new headliner. Sold to my son.",
+    price: "$3000",
+    year: "2005",
+    miles: "100,000"
 };
 function writeDb() {
     ref.push(data);
@@ -36,7 +39,7 @@ function writeDb() {
 function wipeDB() {
     var conf = confirm("Delete Database?");
     if(conf){
-        ref.remove();
+        ref.child().remove();
     }
 }
 
@@ -46,12 +49,16 @@ ref.on('value',gotData,errData);
 function gotData(data) {
     var cars = data.val();
     var keys = Object.keys(cars);
+    $(".deleteDiv").html("");
         for(i = 0; i<keys.length;i++){
             var k = keys[i];
             console.log(cars[k]);
-            
+            $(".deleteDiv").append("<p class='" + k  + "' id='delCar'>" + cars[k].name + "</p>");
+            $("body").append('<script>$(document).on("click", "#delCar", function (e) {var idNum = this.className; ref.child(idNum).remove(); this.remove()}); ');
         }
+
 }
+
 
 function errData(err) {
     console.log("Error: " + err);
