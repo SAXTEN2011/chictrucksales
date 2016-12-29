@@ -20,7 +20,7 @@ function gotData(data) {
     var cars = data.val();
     var keys = Object.keys(cars);
     $(".loading").remove();
-    // $(".page-content").html("").append("<h4>Click on a car for more details</h4>");
+    $(".page-content").html("");
 
     for(i = 0; i<keys.length;i++){
         var k = keys[i];
