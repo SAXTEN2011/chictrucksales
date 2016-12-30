@@ -5,7 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
-    <title>Title</title>
+    <title>Admin Control</title>
 
     <!-- Bootstrap -->
     <link href="css/bootstrap.min.css" rel="stylesheet">
@@ -40,7 +40,7 @@
                 if(user){
                     var isAdmin = false;
                     for(i = 0; i<admins.length;i++){
-                        if(user.email === admins[i]){
+                        if(user.uid === admins[i]){
                             console.log("an admin was authenticated");
                             console.log(user.uid);
                             isAdmin = true;
@@ -188,8 +188,8 @@
         var miles1 = $("#miles").val();
         console.log(miles);
 
-        if(make1 === "" || model1 === "" || color1 === "" || comments1===""){
-            alert("You cannot submit a car with a blank field");
+        if(make1 === "" || model1 === ""){
+            alert("You cannot submit a car with a blank make/model field");
 
         }else {
 

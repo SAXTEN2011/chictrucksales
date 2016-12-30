@@ -50,6 +50,7 @@ function gotMOTD(data) {
     if($(document).width() < 1200){
         $(".page-content").prepend("<h4>"+ msg[msgs].message + "</h4>");
     }else{
+        $(".messotd").addClass('slideInDown');
         $(".messotd").html(msg[msgs].message);
         console.log($(".messotd").width());
         if($(".messotd").width() > $(".mdl-layout__header-row").width()/1.5){
