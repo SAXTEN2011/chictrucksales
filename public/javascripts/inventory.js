@@ -25,10 +25,10 @@ function gotData(data) {
     for(i = 0; i<keys.length;i++){
         var k = keys[i];
         console.log(cars[k]);
-        $(".page-content").append('<div class="demo-card-square mdl-card mdl-shadow--2dp card"> <div class="mdl-card__title mdl-card--expand cardTitle"> <h2 class="mdl-card__title-text">' + cars[k].year + ' '  + cars[k].name + '</h2> </div> <div class="mdl-card__supporting-text">' + cars[k].comments + '<br><br>Color: ' + cars[k].color + '<br> Miles: ' + cars[k].miles  + '<br>Year: ' + cars[k].year + '<br>Cost: ' + cars[k].price + '</div>');
+        $(".page-content").append('<div class="demo-card-square mdl-card mdl-shadow--2dp card animated fadeIn"> <div class="mdl-card__title mdl-card--expand cardTitle"> <h2 class="mdl-card__title-text">' + cars[k].year + ' '  + cars[k].name + '</h2> </div> <div class="mdl-card__supporting-text">' + cars[k].comments + '<br><br>Color: ' + cars[k].color + '<br> Miles: ' + cars[k].miles  + '<br>Year: ' + cars[k].year + '<br>Cost: ' + cars[k].price + '</div>');
 
     }
-    $(".page-content").append('<script>$(document).on("click", ".mdl-card", function (e) {  });</script>')
+    $(".page-content").append('<script>$(document).on("click", ".mdl-card", function (e) { console.log("clicked card"); });</script>')
 }
 
 function errData(err) {
@@ -50,7 +50,7 @@ function gotMOTD(data) {
     if($(document).width() < 1200){
         $(".page-content").prepend("<h4>"+ msg[msgs].message + "</h4>");
     }else{
-        $(".messotd").addClass('slideInDown');
+        $(".messotd").addClass('fadeIn');
         $(".messotd").html(msg[msgs].message);
         console.log($(".messotd").width());
         if($(".messotd").width() > $(".mdl-layout__header-row").width()/1.5){
