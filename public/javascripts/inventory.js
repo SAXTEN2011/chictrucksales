@@ -9,7 +9,7 @@ var config = {
     messagingSenderId: "585030817418"
 };
 var app = firebase.initializeApp(config);
-
+var messOTD;
 var database = app.database();
 var ref = database.ref('inventory/cars');
 var msgRef = database.ref('text/motd');
@@ -25,7 +25,7 @@ function gotData(data) {
     for(i = 0; i<keys.length;i++){
         var k = keys[i];
         console.log(cars[k]);
-        $(".page-content").append('<div class="demo-card-square mdl-card mdl-shadow--2dp card animated fadeIn"> <div class="mdl-card__title mdl-card--expand cardTitle"> <h2 class="mdl-card__title-text">' + cars[k].year + ' '  + cars[k].name + '</h2> </div> <div class="mdl-card__supporting-text">' + cars[k].comments + '<br><br>Color: ' + cars[k].color + '<br> Miles: ' + cars[k].miles  + '<br>Year: ' + cars[k].year + '<br>Cost: ' + cars[k].price + '</div>');
+        $(".page-content").append('<div class="demo-card-square mdl-card mdl-shadow--2dp card animated "> <div class="mdl-card__title mdl-card--expand cardTitle"> <h2 class="mdl-card__title-text">' + cars[k].year + ' '  + cars[k].name + '</h2> </div> <div class="mdl-card__supporting-text">' + cars[k].comments + '<br><br>Color: ' + cars[k].color + '<br> Miles: ' + cars[k].miles  + '<br>Year: ' + cars[k].year + '<br>Cost: ' + cars[k].price + '</div>');
 
     }
     $(".page-content").append('<script>$(document).on("click", ".mdl-card", function (e) { console.log("clicked card"); });</script>')
@@ -46,12 +46,14 @@ function gotMOTD(data) {
 
     var msg = data.val();
     var msgs = Object.keys(msg);
-
+    // alert("Got motd");
     if($(document).width() < 1200){
         $(".page-content").prepend("<h4>"+ msg[msgs].message + "</h4>");
     }else{
-        $(".messotd").addClass('fadeIn');
+        $(".messotd").addClass('slideInDown');
         $(".messotd").html(msg[msgs].message);
+        messOTD = msg[msgs].message;
+        $(".optMOTD").html(messOTD);
         console.log($(".messotd").width());
         if($(".messotd").width() > $(".mdl-layout__header-row").width()/1.5){
             $(".messotd").html("");
