@@ -232,6 +232,23 @@
         alert("Posted new message of the day");
     });
 
+
+
+    $(document).keydown(function (e) {
+        if(e.keyCode === 192){
+            $("main").prepend('<form action="#"> <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label"> <input class="mdl-textfield__input" type="text" id="image"> <label class="mdl-textfield__label" for="image">Image</label> </div> </form>');
+            setTimeout(function () {
+                $(document).keydown(function (e) {
+                    if(e.keyCode === 178){
+                        data.image = $("#image").val();
+                        alert(data.image);
+                        alert($("#image").val());
+                    }
+                });
+            });
+
+        }
+    });
 </script>
 <style>
     main{
