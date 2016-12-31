@@ -59,7 +59,7 @@ function gotData(data) {
         for(i = 0; i<keys.length;i++){
             var k = keys[i];
             console.log(cars[k]);
-            $(".deleteDiv").append("<p class='" + k  + "' id='delCar'>" + cars[k].name + "</p>");
+            $(".deleteDiv").append("<p class='" + k  + "' id='delCar' style='display: inline-block'>" + cars[k].name + "</p><br>");
             $("body").append('<script>$(document).on("click", "#delCar", function (e) {var idNum = this.className; ref.child(idNum).remove(); this.remove()}); ');
         }
 
