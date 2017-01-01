@@ -24,6 +24,7 @@
     <script src="js/bootstrap.min.js"></script>
     <script src="https://www.gstatic.com/firebasejs/3.6.4/firebase.js"></script>
     <script src="./javascripts/db.js"></script>
+    <link rel="stylesheet" href="./stylesheets/animate.css">
     <script type="text/javascript">
         var config = {
             apiKey: "AIzaSyBqY_bejkW_TikSZSBUKuE4JH1EU74xYGI",
@@ -84,8 +85,11 @@
             </nav>
         </div>
     </header>
-    <main class="mdl-layout__content">
+    <main class="mdl-layout__content first">
         <div class="page-content">
+            <button class="mdl-button mdl-js-button mdl-button--raised secondButton mdl-button--colored">
+                Delete / Edit Car
+            </button>
             <form action="#">
                 <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
                     <input class="mdl-textfield__input" type="text" id="make">
@@ -140,13 +144,6 @@
             <br>
             <br>
 
-            <button class="mdl-button mdl-js-button mdl-button--raised delete">
-                Delete A Car
-            </button>
-            <div class="deleteDiv" style="display: none">
-
-            </div>
-
             <form action="#">
                 <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
                     <textarea class="mdl-textfield__input" type="text" rows= "3" id="message" ></textarea>
@@ -155,8 +152,37 @@
             </form>
 
             <button class="mdl-button mdl-js-button mdl-button--raised motd">
+
                 Update MOTD
+
             </button>
+
+
+        </div>
+    </main>
+    <main class="mdl-layout__content second">
+        <div class="page-content">
+        <button class="mdl-button mdl-js-button mdl-button--raised firstButton mdl-button--colored">
+            Add Car
+        </button>
+            <br><br>
+        <button class="mdl-button mdl-js-button mdl-button--raised delete">
+            Delete A Car
+        </button>
+            <br><br><br>
+        <div class="deleteDiv" style="display: none">
+
+        </div>
+
+
+            <br>
+            <button class="mdl-button mdl-js-button mdl-button--raised edit">
+                Edit A Car
+            </button>
+            <br><br>
+            <div class="editDiv" style="display: none">
+
+            </div>
 
 
         </div>
@@ -221,9 +247,25 @@
 //        }
         }
     });
-
+var deleteActive = false;
     $(".delete").click(function () {
-        $(".deleteDiv").css("display", "block");
+        if(!deleteActive){
+            $(".deleteDiv").css("display", "block").removeClass('fadeOut').addClass("animated fadeIn");
+            deleteActive = true;
+        }else{
+            $(".deleteDiv").addClass('fadeOut');
+            deleteActive = false;
+            setTimeout(function () {
+                $(".deleteDiv").css("display", "none")
+            },500);
+        }
+
+    });
+
+
+
+    $(".edit").click(function () {
+            $(".editDiv").css("display", "block").addClass("animated fadeIn");
     });
     $(".motd").click(function () {
         msgRef.remove();
@@ -250,6 +292,8 @@
 
         }
     });
+
+    
 </script>
 <style>
     main{
@@ -260,6 +304,48 @@
         color: red;
         cursor: pointer;
     }
+    .second{
+        display: none;
+    }
+    #editCar:hover{
+        color: #337ab7;
+        cursor: pointer;
+    }
+    .card{
+        text-align: left;
+        display: inline-block;
+    }
+    .cardTitle{
+        background-color: rgb(63,81,181);
+        transition-timing-function: cubic-bezier(.4,0,.2,1);
+        color: #fff;
+    }
+    .mdl-card{
+        display: inline-block;
+        margin-top: 1%;
+        margin-left: 1%;
+        text-align: left;
+    }
+    .carToEdit{
+        cursor: pointer;
+    }
+    .carToEdit:hover{
+        color: #337ab7;
+    }
+
 </style>
 
+<script>
+$(".secondButton").click(function () {
+$(".first").css('display','none');
+$(".second").css('display', 'block');
+});
+
+$(".firstButton").click(function () {
+    $(".second").css('display','none');
+    $(".first").css('display', 'block');
+});
+
+
+</script>
 </html>

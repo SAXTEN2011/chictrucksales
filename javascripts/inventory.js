@@ -25,7 +25,7 @@ function gotData(data) {
     for(i = 0; i<keys.length;i++){
         var k = keys[i];
         console.log(cars[k]);
-        $(".page-content").append('<div class="demo-card-square mdl-card mdl-shadow--2dp card animated "> <div class="mdl-card__title mdl-card--expand cardTitle"> <h2 class="mdl-card__title-text">' + cars[k].year + ' '  + cars[k].name + '</h2> </div> <div class="mdl-card__supporting-text">' + cars[k].comments + '<br><br>Color: ' + cars[k].color + '<br> Miles: ' + cars[k].miles  + '<br>Year: ' + cars[k].year + '<br>Cost: ' + cars[k].price + '</div>');
+        $(".page-content").append('<div class="demo-card-square mdl-card mdl-shadow--2dp card animated "> <div class="mdl-card__title mdl-card--expand cardTitle"> <h2 class="mdl-card__title-text">' + cars[k].year + ' '  + cars[k].name + '</h2> </div> <div class="mdl-card__supporting-text">' + cars[k].comments + '<br><br>Color: ' + cars[k].color + '<br> Miles: ' + cars[k].miles  + '<br>Year: ' + cars[k].year + '<br>Price: ' + cars[k].price + '</div>');
 
     }
     $(".page-content").append('<script>$(document).on("click", ".mdl-card", function (e) { console.log("clicked card"); });</script>')
