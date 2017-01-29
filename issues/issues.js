@@ -26,7 +26,7 @@ ref.on('value', gotIssue, gotError);
 function gotIssue(iss){
 var data = iss.val();
 var keys = Object.keys(data);
-
+$(".currentIssues").html("");
 for(x=0;x<keys.length;x++){
     console.log(data[keys[x]].issue);
     $(".currentIssues").append("<h2 class='issue' id='" + keys[x] + "'>" + data[keys[x]].issue + "</h2>");
