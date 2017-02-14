@@ -79,7 +79,7 @@ function gotData(data) {
             $("body").append('<script>$(document).on("click", "#delCar", function (e) {var idNum = this.className; ref.child(idNum).remove(); this.remove()}); ');
             $(".editDiv").append("<p class='carToEdit' id='" + k + "'>" + cars[k].name + "</p>");
             // $(".editDiv").append('<script>$("# '+ $(this).attr("id") + '").click(function () { clickedEditCar($(this).attr("id")); });</script>');
-            $("#" + k).click(function () {
+            $("#" + k).bind("click touchstart", function () {
                 var editID = $(this).attr("id");
 
                 var carOBJ = cars[editID];
