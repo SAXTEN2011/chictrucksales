@@ -14,6 +14,7 @@ var app = firebase.initializeApp(config);
 var database = app.database();
 var ref = database.ref('inventory/cars');
 var msgRef = database.ref('text/motd');
+var cars;
 // console.log(database);
 var keysArray = [];
 var data = {
@@ -29,7 +30,7 @@ var data = {
 var motd = {
   message: "Home of reliable rides for low prices"
 };
-
+var editCarLink;
 function writeDb() {
     ref.push(data);
     console.log("Name: " + data.name);
@@ -69,7 +70,7 @@ function gotData(data) {
 
 
      */
-    var cars = data.val();
+    cars = data.val();
     var keys = Object.keys(cars);
     $(".deleteDiv").html("");
         for(i = 0; i<keys.length;i++){
@@ -77,60 +78,8 @@ function gotData(data) {
             console.log(cars[k]);
             $(".deleteDiv").append("<p class='" + k  + "' id='delCar' style='display: inline-block'>" + cars[k].name + "</p><br>");
             $("body").append('<script>$(document).on("click", "#delCar", function (e) {var idNum = this.className; ref.child(idNum).remove(); this.remove()}); ');
-            $(".editDiv").append("<p class='carToEdit' id='" + k + "'>" + cars[k].name + "</p>");
+            $(".editDiv").append("<a onclick='editCarLink(" + '"' + k + '"' + ")' <p class='carToEdit' id='" + k + "'>" + cars[k].name + "</p>");
             // $(".editDiv").append('<script>$("# '+ $(this).attr("id") + '").click(function () { clickedEditCar($(this).attr("id")); });</script>');
-            $("#" + k).bind("click touchstart", function () {
-                var editID = $(this).attr("id");
-
-                var carOBJ = cars[editID];
-                var carOBJKeys = Object.keys(carOBJ);
-                var carOBJValues = Object.values(carOBJ);
-            // alert(ref.child(editID));
-            // alert(cars[editID].price);
-                for(i = 0; i< carOBJKeys.length;i++){
-                    if(carOBJKeys[i] !== "name"){
-                        $(".editDiv").css("display", "none");
-                        $(".second").append('<form action="#" id="' + (i+1)*100 + '"> <div class="mdl-textfield mdl-js-textfield"> <input class="mdl-textfield__input" type="text" id="' + i + '" placeholder="' + carOBJKeys[i] + ': ' + carOBJValues[i] + '"> <label class="mdl-textfield__label" for="' + i + '">' + '</label> </div> </form>');
-                    }
-
-                    }
-
-                $(".second").append('<button class="mdl-button mdl-js-button mdl-button--raised button submitEditsBTN"> Submit Edits</button>');
-                var editsToSubmit = {
-
-                };
-                $(".submitEditsBTN").click(function(){
-                    if($("#0").val() !== "") {
-                        editsToSubmit.color = $("#0").val();
-                    }
-                    if($("#1").val() !== "") {
-                        editsToSubmit.comments = $("#1").val();
-                    }
-                    if($("#2").val() !== "") {
-                        editsToSubmit.make = $("#2").val();
-                    }else{
-                        editsToSubmit.make = cars[editID].make;
-                    }
-                    if($("#3").val() !== "") {
-                        editsToSubmit.miles = $("#3").val();
-                    }
-                    if($("#4").val() !== "") {
-                        editsToSubmit.model = $("#4").val();
-                    }else{
-                        editsToSubmit.model = cars[editID].model;
-                    }
-                    if($("#6").val() !== "") {
-                        editsToSubmit.price = $("#6").val();
-                    }
-                    if($("#7").val() !== "") {
-                        editsToSubmit.year = $("#7").val();
-                    }
-                    editsToSubmit.name = editsToSubmit.make + " " + editsToSubmit.model;
-                    _removeAllInputsAndSubmitEditButtons(carOBJKeys);
-                    ref.child(editID).update(editsToSubmit);
-
-                });
-            });
 
         }
 
@@ -148,3 +97,55 @@ function _removeAllInputsAndSubmitEditButtons(arrayToUseForLength) {
         $(".submitEditsBTN").remove();
     }
 }
+
+
+editCarLink = function (passedId) {
+    var editID = passedId;
+
+    var carOBJ = cars[editID];
+    var carOBJKeys = Object.keys(carOBJ);
+    var carOBJValues = Object.values(carOBJ);
+    // alert(ref.child(editID));
+    // alert(cars[editID].price);
+    for (i = 0; i < carOBJKeys.length; i++) {
+        if (carOBJKeys[i] !== "name") {
+            $(".editDiv").css("display", "none");
+            $(".second").append('<form action="#" id="' + (i + 1) * 100 + '"> <div class="mdl-textfield mdl-js-textfield"> <input class="mdl-textfield__input" type="text" id="' + i + '" placeholder="' + carOBJKeys[i] + ': ' + carOBJValues[i] + '"> <label class="mdl-textfield__label" for="' + i + '">' + '</label> </div> </form>');
+        }
+
+    }
+
+    $(".second").append('<button class="mdl-button mdl-js-button mdl-button--raised button submitEditsBTN"> Submit Edits</button>');
+    var editsToSubmit = {};
+    $(".submitEditsBTN").click(function () {
+        if ($("#0").val() !== "") {
+            editsToSubmit.color = $("#0").val();
+        }
+        if ($("#1").val() !== "") {
+            editsToSubmit.comments = $("#1").val();
+        }
+        if ($("#2").val() !== "") {
+            editsToSubmit.make = $("#2").val();
+        } else {
+            editsToSubmit.make = cars[editID].make;
+        }
+        if ($("#3").val() !== "") {
+            editsToSubmit.miles = $("#3").val();
+        }
+        if ($("#4").val() !== "") {
+            editsToSubmit.model = $("#4").val();
+        } else {
+            editsToSubmit.model = cars[editID].model;
+        }
+        if ($("#6").val() !== "") {
+            editsToSubmit.price = $("#6").val();
+        }
+        if ($("#7").val() !== "") {
+            editsToSubmit.year = $("#7").val();
+        }
+        editsToSubmit.name = editsToSubmit.make + " " + editsToSubmit.model;
+        _removeAllInputsAndSubmitEditButtons(carOBJKeys);
+        ref.child(editID).update(editsToSubmit);
+
+    });
+};
