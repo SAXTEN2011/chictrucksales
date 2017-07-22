@@ -37,10 +37,10 @@
       <file leaf-file-name="db.js" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/javascripts/db.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="663">
-              <caret line="96" column="8" lean-forward="false" selection-start-line="96" selection-start-column="8" selection-end-line="96" selection-end-column="8" />
+            <state relative-caret-position="127">
+              <caret line="137" column="5" lean-forward="true" selection-start-line="137" selection-start-column="5" selection-end-line="137" selection-end-column="5" />
               <folding>
-                <marker date="1500764195104" expanded="true" signature="4292:4313" ph="..." />
+                <marker date="1500764273262" expanded="true" signature="4342:4363" ph="..." />
               </folding>
             </state>
           </provider>
@@ -295,7 +295,7 @@
       <workItem from="1487620565360" duration="1752000" />
       <workItem from="1489721245530" duration="231000" />
       <workItem from="1489959907505" duration="69000" />
-      <workItem from="1500761766568" duration="2375000" />
+      <workItem from="1500761766568" duration="2487000" />
     </task>
     <task id="LOCAL-00001" summary="fixed issues tracker">
       <created>1485655011236</created>
@@ -339,11 +339,18 @@
       <option name="project" value="LOCAL" />
       <updated>1500763322006</updated>
     </task>
-    <option name="localTasksCounter" value="7" />
+    <task id="LOCAL-00007" summary="hopefully fixed thing?">
+      <created>1500764203837</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1500764203837</updated>
+    </task>
+    <option name="localTasksCounter" value="8" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="61648000" />
+    <option name="totallyTimeSpent" value="61760000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
@@ -559,10 +566,10 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/javascripts/db.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="663">
-          <caret line="96" column="8" lean-forward="false" selection-start-line="96" selection-start-column="8" selection-end-line="96" selection-end-column="8" />
+        <state relative-caret-position="127">
+          <caret line="137" column="5" lean-forward="true" selection-start-line="137" selection-start-column="5" selection-end-line="137" selection-end-column="5" />
           <folding>
-            <marker date="1500764195104" expanded="true" signature="4292:4313" ph="..." />
+            <marker date="1500764273262" expanded="true" signature="4342:4363" ph="..." />
           </folding>
         </state>
       </provider>
