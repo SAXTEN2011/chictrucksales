@@ -60,8 +60,9 @@ editCarLink = function (passedId) {
 
     carOBJ = cars[editID];
     carOBJKeys = Object.keys(carOBJ);
+    alert(carOBJ);
     for (var ki = 0; i < carOBJKeys.length; i++) {
-        // console.log(carOBJKeys[i]);
+        alert(carOBJKeys[i]);
         carOBJValues.push(carOBJ[carOBJKeys[ki]]);
     }
     // alert(ref.child(editID));
