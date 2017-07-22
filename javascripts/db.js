@@ -60,7 +60,7 @@ editCarLink = function (passedId) {
 
     carOBJ = cars[editID];
     carOBJKeys = Object.keys(carOBJ);
-    alert(carOBJ);
+    alert(JSON.stringify(carOBJ));
     for (var ki = 0; i < carOBJKeys.length; i++) {
         alert(carOBJKeys[i]);
         carOBJValues.push(carOBJ[carOBJKeys[ki]]);
