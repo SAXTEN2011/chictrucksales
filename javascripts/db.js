@@ -156,7 +156,12 @@ function gotData(data) {
 
         $("#" + k).bind("touchstart click", function () {
             // alert("clicked thingy");
-            editCarLink($(this).attr('id'));
+            try {
+                editCarLink($(this).attr('id'));
+            } catch (e) {
+                alert(e);
+            }
+
         });
 
         // $("#" + k).hover(function () {
