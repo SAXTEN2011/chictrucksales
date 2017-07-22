@@ -83,6 +83,7 @@ function gotData(data) {
     })(navigator.userAgent || navigator.vendor || window.opera);
 
     $(".second").append("<p>" + jQuery.browser.mobile + "</p>");
+    $(".second").append("<p>" + window.innerWidth + ", " + window.innerHeight + "</p>");
     cars = data.val();
 
     var keys = Object.keys(cars);
