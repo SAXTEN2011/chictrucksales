@@ -78,7 +78,7 @@ function gotData(data) {
             console.log(cars[k]);
             $(".deleteDiv").append("<p class='" + k  + "' id='delCar' style='display: inline-block'>" + cars[k].name + "</p><br>");
             $("body").append('<script>$(document).on("click", "#delCar", function (e) {var idNum = this.className; ref.child(idNum).remove(); this.remove()}); ');
-            $(".editDiv").append("<a onclick='editCarLink(" + '"' + k + '"' + ")' <p class='carToEdit' id='" + k + "'>" + cars[k].name + "</p>");
+            $(".editDiv").append("<a onclick='editCarLink(" + '"' + k + '"' + ")' href='#'  class='carToEdit' id='\" + k + \"'>" + cars[k].name + "</a><br>");
             // $(".editDiv").append('<script>$("# '+ $(this).attr("id") + '").click(function () { clickedEditCar($(this).attr("id")); });</script>');
 
         }
