@@ -52,13 +52,18 @@ function writeMOTD() {
 
 ref.on('value',gotData,errData);
 var hovered = false;
-
+var carOBJValues = [];
+var carOBJ;
+var carOBJKeys;
 editCarLink = function (passedId) {
     var editID = passedId;
 
-    var carOBJ = cars[editID];
-    var carOBJKeys = Object.keys(carOBJ);
-    var carOBJValues = Object.values(carOBJ);
+    carOBJ = cars[editID];
+    carOBJKeys = Object.keys(carOBJ);
+    for (var ki = 0; i < carOBJKeys.length; i++) {
+        // console.log(carOBJKeys[i]);
+        carOBJValues.push(carOBJ[carOBJKeys[ki]]);
+    }
     // alert(ref.child(editID));
     // alert(cars[editID].price);
     for (var i = 0; i < carOBJKeys.length; i++) {
