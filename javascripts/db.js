@@ -60,9 +60,7 @@ editCarLink = function (passedId) {
 
     carOBJ = cars[editID];
     carOBJKeys = Object.keys(carOBJ);
-    alert(JSON.stringify(carOBJ));
     for (var ki = 0; ki < carOBJKeys.length; ki++) {
-        alert(carOBJKeys[i]);
         carOBJValues.push(carOBJ[carOBJKeys[ki]]);
     }
     // alert(ref.child(editID));
@@ -144,9 +142,6 @@ function gotData(data) {
     if (window.innerHeight === 768 || window.innerHeight === 960) {
         jQuery.browser.mobile = true;
     }
-
-    $(".second").append("<p>" + jQuery.browser.mobile + "</p>");
-    $(".second").append("<p>" + window.innerWidth + ", " + window.innerHeight + "</p>");
     cars = data.val();
 
     var keys = Object.keys(cars);
