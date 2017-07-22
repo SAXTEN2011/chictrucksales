@@ -3,6 +3,7 @@
   <component name="ChangeListManager">
     <list default="true" id="96760c5b-18ae-44e0-a601-57a9cc35f774" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/javascripts/db.js" afterPath="$PROJECT_DIR$/javascripts/db.js" />
     </list>
     <ignored path="chictrucksales.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -36,10 +37,10 @@
       <file leaf-file-name="db.js" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/javascripts/db.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="416">
-              <caret line="82" column="29" lean-forward="false" selection-start-line="82" selection-start-column="29" selection-end-line="82" selection-end-column="29" />
+            <state relative-caret-position="110">
+              <caret line="88" column="35" lean-forward="false" selection-start-line="88" selection-start-column="35" selection-end-line="88" selection-end-column="35" />
               <folding>
-                <marker date="1500765022477" expanded="true" signature="4455:4476" ph="..." />
+                <marker date="1500765234732" expanded="true" signature="4607:4628" ph="..." />
               </folding>
             </state>
           </provider>
@@ -294,7 +295,7 @@
       <workItem from="1487620565360" duration="1752000" />
       <workItem from="1489721245530" duration="231000" />
       <workItem from="1489959907505" duration="69000" />
-      <workItem from="1500761766568" duration="3223000" />
+      <workItem from="1500761766568" duration="3417000" />
     </task>
     <task id="LOCAL-00001" summary="fixed issues tracker">
       <created>1485655011236</created>
@@ -380,11 +381,18 @@
       <option name="project" value="LOCAL" />
       <updated>1500765024332</updated>
     </task>
-    <option name="localTasksCounter" value="13" />
+    <task id="LOCAL-00013" summary="hopefully fixed thing?">
+      <created>1500765046590</created>
+      <option name="number" value="00013" />
+      <option name="presentableId" value="LOCAL-00013" />
+      <option name="project" value="LOCAL" />
+      <updated>1500765046590</updated>
+    </task>
+    <option name="localTasksCounter" value="14" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="62496000" />
+    <option name="totallyTimeSpent" value="62690000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
@@ -600,10 +608,10 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/javascripts/db.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="416">
-          <caret line="82" column="29" lean-forward="false" selection-start-line="82" selection-start-column="29" selection-end-line="82" selection-end-column="29" />
+        <state relative-caret-position="110">
+          <caret line="88" column="35" lean-forward="false" selection-start-line="88" selection-start-column="35" selection-end-line="88" selection-end-column="35" />
           <folding>
-            <marker date="1500765022477" expanded="true" signature="4455:4476" ph="..." />
+            <marker date="1500765234732" expanded="true" signature="4607:4628" ph="..." />
           </folding>
         </state>
       </provider>
