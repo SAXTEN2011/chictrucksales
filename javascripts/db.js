@@ -2,6 +2,7 @@
  * Created by Aaron on 12/29/2016.
  */
 // Initialize Firebase
+'use strict';
 var config = {
     apiKey: "AIzaSyBqY_bejkW_TikSZSBUKuE4JH1EU74xYGI",
     authDomain: "chicktrucksales.firebaseapp.com",
@@ -73,14 +74,18 @@ function gotData(data) {
     cars = data.val();
     var keys = Object.keys(cars);
     $(".deleteDiv").html("");
-        for(i = 0; i<keys.length;i++){
+    for (var i = 0; i < keys.length; i++) {
             var k = keys[i];
             console.log(cars[k]);
             $(".deleteDiv").append("<p class='" + k  + "' id='delCar' style='display: inline-block'>" + cars[k].name + "</p><br>");
             $("body").append('<script>$(document).on("click", "#delCar", function (e) {var idNum = this.className; ref.child(idNum).remove(); this.remove()}); ');
-            $(".editDiv").append("<a onclick='editCarLink(" + '"' + k + '"' + ")' href='#'  class='carToEdit' id='\" + k + \"'>" + cars[k].name + "</a><br>");
+        //onclick='editCarLink(" + '"' + k + '"' + ")'
+        $(".editDiv").append("<p  class='carToEdit' id='" + k + "'>" + cars[k].name + "</p><br>");
             // $(".editDiv").append('<script>$("# '+ $(this).attr("id") + '").click(function () { clickedEditCar($(this).attr("id")); });</script>');
 
+        $("#" + k).bind("touchstart click", function () {
+            editCarLink($(this).attr('id'));
+        });
         }
 
 }
@@ -92,12 +97,11 @@ function errData(err) {
 
 
 function _removeAllInputsAndSubmitEditButtons(arrayToUseForLength) {
-    for(k=0;k<=arrayToUseForLength.length;k++){
+    for (var k = 0; k <= arrayToUseForLength.length; k++) {
         $("#" + (k+1)*100).remove();
         $(".submitEditsBTN").remove();
     }
 }
-
 
 editCarLink = function (passedId) {
     var editID = passedId;
@@ -107,7 +111,7 @@ editCarLink = function (passedId) {
     var carOBJValues = Object.values(carOBJ);
     // alert(ref.child(editID));
     // alert(cars[editID].price);
-    for (i = 0; i < carOBJKeys.length; i++) {
+    for (var i = 0; i < carOBJKeys.length; i++) {
         if (carOBJKeys[i] !== "name") {
             $(".editDiv").css("display", "none");
             $(".second").append('<form action="#" id="' + (i + 1) * 100 + '"> <div class="mdl-textfield mdl-js-textfield"> <input class="mdl-textfield__input" type="text" id="' + i + '" placeholder="' + carOBJKeys[i] + ': ' + carOBJValues[i] + '"> <label class="mdl-textfield__label" for="' + i + '">' + '</label> </div> </form>');
