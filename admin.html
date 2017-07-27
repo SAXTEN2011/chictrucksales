@@ -135,7 +135,9 @@
                 </div>
             </form>
 
-
+            <h6 style="display: inline-block; margin-left: 5%">Picture</h6>
+            <input class="fileUpload" type="file">
+            <br><br>
             <button class="mdl-button mdl-js-button mdl-button--raised button">
                 Add Car
             </button>
@@ -245,6 +247,8 @@
                 $(".successMsg").remove();
             }, 1000);
 //        }
+
+            upload();
         }
     });
 var deleteActive = false;

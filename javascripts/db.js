@@ -13,9 +13,20 @@ var config = {
 var app = firebase.initializeApp(config);
 
 var database = app.database();
+var images = firebase.storage().ref();
 var ref = database.ref('inventory/cars');
 var msgRef = database.ref('text/motd');
 var cars;
+var storage = firebase.storage().ref("/images");
+var upload = function (fileName) {
+    console.log(cars);
+    var file = $(".fileUpload")[0].files[0];
+    var imagesRef = storage.child('/' + Object.keys(cars)[Object.keys(cars).length - 1]);
+    imagesRef.put(file);
+};
+
+
+
 // console.log(database);
 var keysArray = [];
 var data = {
@@ -73,6 +84,8 @@ editCarLink = function (passedId) {
 
     }
 
+    $(".second").append('<h6 style="display: inline-block; margin-left: 5%" class="picLabel">Picture</h6>\n' +
+        '            <input class="fileUpload" type="file"> <br>');
     $(".second").append('<button class="mdl-button mdl-js-button mdl-button--raised button submitEditsBTN"> Submit Edits</button>');
     var editsToSubmit = {};
     $(".submitEditsBTN").click(function () {
@@ -105,7 +118,20 @@ editCarLink = function (passedId) {
         editsToSubmit.name = editsToSubmit.make + " " + editsToSubmit.model;
         _removeAllInputsAndSubmitEditButtons(carOBJKeys);
         ref.child(editID).update(editsToSubmit);
+        // alert("got to thing");
+        if ($(".fileUpload")[1].files[0] !== undefined) {
+            // alert("ayy");
+            console.log(cars);
+            var file = $(".fileUpload")[1].files[0];
+            var imagesRef = storage.child('/' + passedId);
+            imagesRef.put(file).then(function () {
+                window.location.assign(window.location);
+            });
+        }
 
+        $(".fileUpload").remove();
+        $(".picLabel").remove();
+        $(".second").append("<h1>Please Wait...</h1>");
     });
 };
 
