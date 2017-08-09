@@ -2,7 +2,6 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="96760c5b-18ae-44e0-a601-57a9cc35f774" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/pablo.html" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="chictrucksales.iws" />
@@ -75,8 +74,8 @@
       <file leaf-file-name="pablo.html" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/pablo.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="379">
-              <caret line="43" column="0" lean-forward="true" selection-start-line="43" selection-start-column="0" selection-end-line="43" selection-end-column="0" />
+            <state relative-caret-position="464">
+              <caret line="54" column="41" lean-forward="false" selection-start-line="54" selection-start-column="41" selection-end-line="54" selection-end-column="41" />
               <folding />
             </state>
           </provider>
@@ -351,7 +350,7 @@
       <workItem from="1501097738974" duration="42000" />
       <workItem from="1501176564747" duration="6153000" />
       <workItem from="1501368375966" duration="70000" />
-      <workItem from="1502297661259" duration="476000" />
+      <workItem from="1502297661259" duration="532000" />
     </task>
     <task id="LOCAL-00001" summary="fixed issues tracker">
       <created>1485655011236</created>
@@ -507,11 +506,18 @@
       <option name="project" value="LOCAL" />
       <updated>1501182659825</updated>
     </task>
-    <option name="localTasksCounter" value="23" />
+    <task id="LOCAL-00023" summary="hopefully fixed thing?">
+      <created>1502298144912</created>
+      <option name="number" value="00023" />
+      <option name="presentableId" value="LOCAL-00023" />
+      <option name="project" value="LOCAL" />
+      <updated>1502298144913</updated>
+    </task>
+    <option name="localTasksCounter" value="24" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="77997000" />
+    <option name="totallyTimeSpent" value="78053000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
@@ -754,8 +760,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/pablo.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="379">
-          <caret line="43" column="0" lean-forward="true" selection-start-line="43" selection-start-column="0" selection-end-line="43" selection-end-column="0" />
+        <state relative-caret-position="464">
+          <caret line="54" column="41" lean-forward="false" selection-start-line="54" selection-start-column="41" selection-end-line="54" selection-end-column="41" />
           <folding />
         </state>
       </provider>
